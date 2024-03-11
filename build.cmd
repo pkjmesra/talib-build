@@ -9,6 +9,11 @@ if errorlevel 1 exit /B 1
 
 del talib\_ta_lib.c
 
+curl -L -o config.guess http://cvs.savannah.gnu.org/viewvc/*checkout*/config/config/config.guess?revision=1.377
+move config.guess talib\
+dir talib
+if errorlevel 1 exit /B 1
+
 curl -L -o talib-python.zip https://github.com/TA-Lib/ta-lib-python/archive/refs/tags/TA_Lib-%TALIB_PY_VER%.zip
 if errorlevel 1 exit /B 1
 
